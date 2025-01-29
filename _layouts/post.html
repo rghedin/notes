@@ -1,0 +1,29 @@
+---
+layout: default
+---
+<article class="entry 
+{% if page.type == 'image' %}entry_image
+{% elsif page.type == 'quote' %}entry_quote
+{% elsif page.type == 'aside' %}entry_aside
+{% elsif page.type == 'page' %}entry_page
+{% endif %}">
+
+{% if page.id %}
+<p class="data">{{ page.date | date: "%-d/%-m/%Y" }}</p>
+{% endif %}
+
+<h1>{{ page.title | escape }}</h1>
+
+{{ content }}
+</article>
+
+{% if page.id %}
+<div class="paginacao">
+	{% if page.previous.url %}
+	<a class="paginacao_post_anterior" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+	{% endif %}
+	{% if page.next.url %}
+	<a class="paginacao_post_proxima" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+	{% endif %}
+</div>
+{% endif %}

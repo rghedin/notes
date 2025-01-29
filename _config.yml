@@ -1,0 +1,24 @@
+title: Notes
+description: English-written tech blog by Rodrigo Ghedin, from Brazil.
+email: rodrigo@ghed.in
+author: Rodrigo Ghedin
+url: https://notes.ghed.in
+
+permalink: /posts/:year/:title/
+markdown: kramdown
+
+timezone: UTC−03:00
+future: false
+
+jekyll-archives:
+  slug_mode: latin
+  enabled:
+    - categories
+  layout: categories
+  layouts:
+    category: categories
+  permalinks:
+    category: '/subject/:name/'
+
+paginate: 6
+paginate_path: '/page/:num/'

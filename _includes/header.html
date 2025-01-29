@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en-us' }}">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ '/feed.xml' }}">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ site.baseurl }}/apple-touch-icon.png?v=20240423">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ site.baseurl }}/favicon-32x32.png?v=20240423">
+  <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico?v=20240423">
+
+  <link rel="stylesheet" href="/assets/style.css?v={{ "now" | date: "%Y%m%d%H%M" }}" media="all">
+</head>
+
+<body{% if page.id %} class="single"{% endif %}>
+
+  <header>
+    <div class="logo">
+      {% if page.id %}
+      <h2><a href="{{ '/' }}">Notes</a></h2>
+      <p>by Rodrigo Ghedin</p>
+      {% else %}
+      <h1><a href="{{ '/' }}">Notes</a></h1>
+      <p>by Rodrigo Ghedin</p>
+      {% endif %}
+    </div>
+
+    <nav>
+      <ul>
+        <li>
+          <a href="https://mastodon.social/@manualdousuario" aria-label="Link to my Mastodon profile."><img src="{{ site.baseurl }}/assets/icon-mastodon.svg" alt="Mastodon" /></a>
+        </li>
+        <li>
+          <a href="https://bsky.app/profile/manualdousuario.net" aria-label="Link to my Bluesky profile."><img src="{{ site.baseurl }}/assets/icon-bluesky.svg" alt="Bluesky" /></a>
+        </li>
+        <li>
+          <a href="mailto:rodrigo@ghed.in" aria-label="My email."><img src="{{ site.baseurl }}/assets/icon-email.svg" alt="Email" /></a>
+        </li>
+        <li>
+          <a href="/feed.xml" aria-label="Link to the Atom (RSS) feed."><img src="{{ site.baseurl }}/assets/icon-rss.svg" alt="RSS feed" /></a>
+        </li>
+      </ul>
+    </nav>
+  </header>
