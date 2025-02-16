@@ -145,6 +145,12 @@ button[type=submit]:hover {
 	padding-left: .75rem;
 }
 
+.footnotes {
+	border-top: 1px solid var(--cor-background-alt);
+  padding-top: var(--pos-margem-baixo);
+  margin-top: 4.5rem;
+}
+
 /* Leiaute */
 main,
 header,
